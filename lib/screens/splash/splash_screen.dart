@@ -2,6 +2,7 @@ import 'package:ecommerce_app/screens/splash/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
+  static String routeName = 'splashPage';
   const SplashScreen({Key key}) : super(key: key);
 
   @override
