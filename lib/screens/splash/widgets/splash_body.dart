@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/api/mock/splash_data.dart';
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/screens/login/login_screen.dart';
 import 'package:ecommerce_app/screens/splash/widgets/splash_content.dart';
 import 'package:ecommerce_app/widgets/default_button.dart';
 import 'package:flutter/material.dart';
@@ -51,9 +52,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
                     ),
                     Spacer(),
                     AppDefaulButton(
-                      onTap: () {
-                        print('hola');
-                      },
+                      onTap: () =>
+                          Navigator.pushNamed(context, LoginScreen.routeName),
                       text: 'Continuar',
                     )
                   ],
