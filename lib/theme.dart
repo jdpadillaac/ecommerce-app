@@ -27,6 +27,28 @@ ThemeData lightTheme() {
           bodyText1: TextStyle(color: AppColors.mainColor),
           bodyText2: TextStyle(color: AppColors.secondColor),
         ),
+    inputDecorationTheme: InputDecorationTheme(
+      // No sirve, ni idea por que
+      // floatingLabelBehavior: FloatingLabelBehavior.always,
+      labelStyle: TextStyle(color: AppColors.mainColor),
+      hintStyle: TextStyle(
+        color: AppColors.secondColor,
+      ),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: 45,
+        vertical: 20,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: BorderSide(color: AppColors.mainColor),
+        gapPadding: 5,
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: BorderSide(color: AppColors.mainColor),
+        gapPadding: 5,
+      ),
+    ),
     iconTheme: IconThemeData(color: AppColors.secondColor),
   );
 }

@@ -20,7 +20,7 @@ class AppDefaulButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
-          'Continuar',
+          text,
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),

@@ -16,7 +16,7 @@ class SplashContent extends StatelessWidget {
       children: [
         Spacer(),
         Text(
-          'Ecommerce-app',
+          'FuBank',
           style: TextStyle(
             fontSize: 40,
             color: Theme.of(context).canvasColor,

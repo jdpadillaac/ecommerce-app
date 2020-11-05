@@ -1,18 +1,18 @@
 final List<Map<String, String>> splashData = [
   {
-    "text": "Todo lo que necesitas en un solo sitio",
+    "text": "Un text muy largo aqui 1",
     "image": "assets/custom/splash.png",
   },
   {
-    "text": "Te brindamos asesoria con tus pedidos",
+    "text": "Un text muy largo aqui 2",
     "image": "assets/custom/splash2.png",
   },
   {
-    "text": "Todo al alcance sin moverte de casa",
+    "text": "Un text muy largo aqui 3",
     "image": "assets/custom/splash3.png",
   },
   {
-    "text": "Nuestros usuarios siempre estan felices con nuestro servicio",
+    "text": "Un text muy largo aqui 4",
     "image": "assets/custom/splash4.png",
   }
 ];
