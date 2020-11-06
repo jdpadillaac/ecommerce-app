@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/screens/forgot_password/forgot_password_screen.dart';
+import 'package:ecommerce_app/screens/login_success/login_success_screen.dart';
 import 'package:ecommerce_app/widgets/default_button.dart';
 import 'package:ecommerce_app/widgets/form_errors.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,9 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
+  String email;
+  String password;
+  bool remember = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +26,58 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         children: [
           _emailInput(),
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           _passwordInput(),
-          SizedBox(height: 20),
+          const SizedBox(height: 15),
+          _rememberPasswordInputs(context),
+          const SizedBox(height: 15),
           FormErrors(errors: errors),
-          SizedBox(height: 20),
+          const SizedBox(height: 15),
           AppDefaulButton(
-            text: 'Ingresar',
+            text: 'Ingresasssr',
             onTap: () {
-              if (_formKey.currentState.validate()) {
+              if (_formKey.currentState.validate() && errors.length == 0) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(
+                  context,
+                  LoginSuccesScrenn.routeName,
+                );
               }
             },
           ),
         ],
       ),
+    );
+  }
+
+  Row _rememberPasswordInputs(BuildContext context) {
+    return Row(
+      children: [
+        Checkbox(
+          value: remember,
+          activeColor: AppColors.mainColor,
+          onChanged: (value) {
+            print(value);
+            setState(() {
+              remember = value;
+            });
+          },
+        ),
+        Text('Recordar'),
+        Spacer(),
+        InkWell(
+          child: Text(
+            'Recordar contraseña',
+            style: TextStyle(
+              decoration: TextDecoration.underline,
+            ),
+          ),
+          onTap: () => Navigator.pushNamed(
+            context,
+            ForgotPasswordScreen.routeName,
+          ),
+        ),
+      ],
     );
   }
 
@@ -45,6 +87,7 @@ class _LoginFormState extends State<LoginForm> {
 
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      onSaved: (value) => email = value,
       decoration: InputDecoration(
         labelText: 'Email',
         hintText: 'Ingresa tu email',
@@ -98,6 +141,7 @@ class _LoginFormState extends State<LoginForm> {
 
     return TextFormField(
       obscureText: true,
+      onSaved: (newValue) => password = newValue,
       decoration: InputDecoration(
         labelText: 'Contraseña',
         hintText: '* * * * * * * *',

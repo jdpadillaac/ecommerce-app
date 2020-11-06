@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/screens/login/widgets/content.dart';
+import 'package:ecommerce_app/widgets/appbar_back_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -11,21 +12,16 @@ class LoginScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: _loginScreenAppBar(context),
-        body: LoginScreenContent(),
+        body: SingleChildScrollView(
+          child: LoginScreenContent(),
+        ),
       ),
     );
   }
 
   AppBar _loginScreenAppBar(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        icon: Icon(
-          Icons.arrow_back_ios,
-          color: AppColors.mainColor,
-          size: 30,
-        ),
-        onPressed: () => Navigator.pop(context),
-      ),
+      leading: AppbarBackButton(),
       centerTitle: true,
       elevation: 0,
       title: Text(

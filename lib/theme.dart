@@ -5,16 +5,18 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData lightTheme() {
   return ThemeData(
     appBarTheme: AppBarTheme(
-      color: AppColors.mainColor,
-      textTheme: GoogleFonts.poppinsTextTheme()
-          .apply(
-            bodyColor: Colors.white,
-          )
-          .copyWith(
-            headline6: TextStyle(
-              fontSize: 20,
-            ),
-          ),
+      color: Colors.white,
+      elevation: 0,
+      centerTitle: true,
+      iconTheme: IconThemeData(
+        color: appPrimaryColor,
+      ),
+      textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+        headline6: TextStyle(
+          fontSize: 20,
+          color: appPrimaryColor,
+        ),
+      ),
     ),
     accentColor: AppColors.accentColor,
     canvasColor: AppColors.mainColor,
