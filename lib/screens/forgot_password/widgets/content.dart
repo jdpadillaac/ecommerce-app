@@ -12,8 +12,9 @@ class ForgotPasswordContent extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildTitle(),
+            HeadingTitle(title: 'Recuperar contraseña'),
             const SizedBox(height: 15),
             _buildSubtitle(),
             const Spacer(),
@@ -32,10 +33,19 @@ class ForgotPasswordContent extends StatelessWidget {
       textAlign: TextAlign.center,
     );
   }
+}
 
-  Text _buildTitle() {
+class HeadingTitle extends StatelessWidget {
+  final String title;
+  const HeadingTitle({
+    Key key,
+    @required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Text(
-      'Recuperar contraseña',
+      title,
       style: const TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,

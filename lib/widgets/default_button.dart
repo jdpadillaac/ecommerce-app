@@ -4,9 +4,16 @@ import 'package:flutter/material.dart';
 class AppDefaulButton extends StatelessWidget {
   final Function onTap;
   final String text;
+  final IconData prefixIcon;
+  final IconData sufixIcon;
 
-  const AppDefaulButton({Key key, @required this.onTap, @required this.text})
-      : super(key: key);
+  const AppDefaulButton({
+    Key key,
+    @required this.onTap,
+    @required this.text,
+    this.prefixIcon,
+    this.sufixIcon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +26,43 @@ class AppDefaulButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Text(
-          text,
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _buildPrefixIcon(),
+            Text(
+              text,
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            _buildSufixIcon(),
+          ],
         ),
       ),
+    );
+  }
+
+  Row _buildPrefixIcon() {
+    return Row(
+      children: [
+        Icon(
+          prefixIcon,
+          color: Colors.white,
+        ),
+        SizedBox(width: 10)
+      ],
+    );
+  }
+
+  Row _buildSufixIcon() {
+    return Row(
+      children: [
+        SizedBox(width: 10),
+        Icon(
+          sufixIcon,
+          color: Colors.white,
+        )
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/screens/sign_up/sigm_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegisterAccountText extends StatelessWidget {
@@ -18,11 +19,14 @@ class RegisterAccountText extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Text(
-          'Registrate',
-          style: const TextStyle(
-            color: appPrimaryColor,
-            fontSize: 16,
+        InkWell(
+          onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
+          child: const Text(
+            'Registrate',
+            style: const TextStyle(
+              color: appPrimaryColor,
+              fontSize: 16,
+            ),
           ),
         ),
       ],

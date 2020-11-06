@@ -22,11 +22,10 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         children: [
           _emailInput(),
           FormErrors(errors: errors),
-          const SizedBox(
-            height: 50,
-          ),
+          const SizedBox(height: 30),
           AppDefaulButton(
             text: 'Continuar',
+            sufixIcon: Icons.send,
             onTap: () {
               if (_formKey.currentState.validate() && errors.length == 0) {
                 _formKey.currentState.save();

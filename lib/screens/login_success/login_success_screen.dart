@@ -38,7 +38,7 @@ class LoginSuccesScrenn extends StatelessWidget {
                 const Spacer(),
                 AppDefaulButton(
                   text: 'Continuar',
-                  onTap: () => Navigator.pushReplacementNamed(
+                  onTap: () => Navigator.popAndPushNamed(
                     context,
                     HomeScreen.routeName,
                   ),

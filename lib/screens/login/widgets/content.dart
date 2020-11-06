@@ -16,7 +16,7 @@ class LoginScreenContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _pageTitle(),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             _pageSubtitle(),
             const SizedBox(height: 30),
             LoginForm(),
