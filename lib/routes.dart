@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/complete_profile/complete_profile.dart';
 import 'package:ecommerce_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/login/login_screen.dart';
@@ -12,5 +13,6 @@ final Map<String, WidgetBuilder> appRoutes = {
   ForgotPasswordScreen.routeName: (_) => ForgotPasswordScreen(),
   LoginSuccesScrenn.routeName: (_) => LoginSuccesScrenn(),
   HomeScreen.routeName: (_) => HomeScreen(),
-  SignUpScreen.routeName: (_) => SignUpScreen()
+  SignUpScreen.routeName: (_) => SignUpScreen(),
+  CompleteProfileScreen.routeName: (_) => CompleteProfileScreen()
 };

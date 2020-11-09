@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/screens/complete_profile/complete_profile.dart';
 import 'package:ecommerce_app/screens/forgot_password/widgets/content.dart';
 import 'package:ecommerce_app/widgets/default_button.dart';
 import 'package:ecommerce_app/widgets/form_errors.dart';
@@ -84,7 +85,11 @@ class _SignUpFormState extends State<SignUpForm> {
           const SizedBox(height: 20),
           FormErrors(errors: errors),
           const SizedBox(height: 20),
-          AppDefaulButton(onTap: () {}, text: 'Registrar'),
+          AppDefaulButton(
+            text: 'Registrar',
+            onTap: () =>
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName),
+          ),
         ],
       ),
     );
@@ -188,7 +193,7 @@ class _SignUpFormState extends State<SignUpForm> {
       obscureText: true,
       onSaved: (newValue) => password = newValue,
       decoration: InputDecoration(
-        labelText: 'Contraseña',
+        labelText: 'Confirmar contraseña',
         hintText: '* * * * * * * *',
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: Padding(
