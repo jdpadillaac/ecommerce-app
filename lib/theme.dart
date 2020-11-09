@@ -32,10 +32,9 @@ ThemeData lightTheme() {
     inputDecorationTheme: InputDecorationTheme(
       // No sirve, ni idea por que
       // floatingLabelBehavior: FloatingLabelBehavior.always,
-      labelStyle: TextStyle(color: AppColors.mainColor),
-      hintStyle: TextStyle(
-        color: AppColors.secondColor,
-      ),
+
+      labelStyle: const TextStyle(color: appPrimaryColor),
+      hintStyle: const TextStyle(color: Colors.grey),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 45,
         vertical: 20,

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/complete_profile/widgets/content.dart';
+import 'package:ecommerce_app/widgets/appbar_back_button.dart';
 import 'package:flutter/material.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class CompleteProfileScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Completar registro'),
+          leading: AppbarBackButton(),
         ),
         body: CompleteProfileScreenContent(),
       ),
